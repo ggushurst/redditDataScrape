@@ -1,31 +1,20 @@
 package URLReaderJava;
 
-//import java.net.*;
-import java.io.*;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.util.*;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.JSONValue;
-import org.json.simple.parser.JSONParser;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
+
 import java.io.FileWriter;
-import com.google.gson.*;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+
+import org.postgresql.*;
+
 
 
 public class App {
@@ -77,7 +66,23 @@ public class App {
             postUserNames.add(u.text());
         }
 
-        //Creating a JSON file that will be read into database
+        // Writing into database
+        DatabaseRead dbr = new DatabaseRead("jdbc:postgresql://localhost/redditData", "greg", "Haha343606");
+        int lastID = dbr.getLastID(); //This is used to set the ID for each new element to a unique int, creating no override for last set of data input
+
+        for(int i = 1; i <= postTitles.size() - 1; i++){
+            redditData redditData = new redditData(i+lastID, postTitles.get(i), postVotes.get(i), postComments.get(i), postUserNames.get(i));
+            DatabaseConnection db = new DatabaseConnection("jdbc:postgresql://localhost/redditData", "greg", "Haha343606");
+            db.insertData(redditData);
+        }
+
+        //Reading database
+
+//        DatabaseRead dbr = new DatabaseRead("jdbc:postgresql://localhost/redditData", "greg", "Haha343606");
+//        dbr.readAllData(); //This will prompt the user for a SQL input and return the data associated with the output
+
+
+        //Creating a JSON file
 
         JSONObject masterObj = new JSONObject(); //Master object that will be used to write the json file
         JSONArray header = new JSONArray();
