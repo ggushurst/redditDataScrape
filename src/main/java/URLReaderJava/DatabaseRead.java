@@ -40,7 +40,7 @@ public class DatabaseRead {
          catch (SQLException ex){
             System.out.println(ex.getMessage());
         }
-
+        scanner.close();
     }
 
     //Finding the last ID assigned so when new data is input, it will not override previous ID #'s
@@ -59,7 +59,7 @@ public class DatabaseRead {
         catch (SQLException ex){
             System.out.println(ex.getMessage());
         }
-    return -1;
+        return -1;
     }
 
 }
