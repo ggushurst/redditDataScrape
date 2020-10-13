@@ -121,7 +121,7 @@ public class App {
         //Write json file
         String time = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss")
                 .format(new java.util.Date()); //Created a timestamp to add to filename to have unique files
-        try (FileWriter file = new FileWriter("redditData_" + time + ".json")){
+        try (FileWriter file = new FileWriter("data/scraped/redditData_" + time + ".json")){
             file.write(masterObj.toJSONString());
             file.flush();
         }
