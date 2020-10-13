@@ -1,0 +1,9 @@
+# None of the values in this file should be quoted.
+# The username and password for the given reddit account.
+reddit_username=
+reddit_password=
+# Client ID and  Client Secret should be created for a given reddit user.
+# More info here: https://mattbdean.gitbooks.io/jraw/content/quickstart.html#create-a-reddit-oauth2-app
+reddit_client_secret=
+reddit_client_id=
+

@@ -1,6 +1,5 @@
 package URLReaderJava;
 
-import io.github.cdimascio.dotenv.Dotenv;
 import net.dean.jraw.RedditClient;
 import net.dean.jraw.http.NetworkAdapter;
 import net.dean.jraw.http.OkHttpNetworkAdapter;
@@ -17,10 +16,9 @@ import net.dean.jraw.references.SubredditReference;
 
 public class RedditService {
     public static void main(String[] args) {
-        Dotenv dotenv = Dotenv.load();
-        dotenv.get("REDDIT_USERNAME");
-        // System.out.println(dotenv.get("REDDIT_USERNAME"));
-        GetFrontPageTitles();
+        Config config = new Config();
+        System.out.println(config.properties);
+        // GetFrontPageTitles();
     }
 
     public static void GetFrontPageTitles() {
