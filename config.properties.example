@@ -6,4 +6,7 @@ reddit_password=
 # More info here: https://mattbdean.gitbooks.io/jraw/content/quickstart.html#create-a-reddit-oauth2-app
 reddit_client_secret=
 reddit_client_id=
-
+# db. is used for connecting to postgres and should not be modified.
+db.connection_string=jdbc:postgresql://localhost/redditData
+db.username=greggushurst
+db.password=Haha343606
