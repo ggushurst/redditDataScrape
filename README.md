@@ -51,6 +51,10 @@ psql -U greggushurst redditData < db/redditData.dmp
 ## Configuration
 The application requires configuration. There is an example configuration file called `config.properties.example`. Copy this file to `config.properties` in the root of the project, and fill in the values before running the project.
 
+# Running
+
+The main entrypoint to the application is `App.java`. To run the example of using the Reddit API, run `Example.java`.
+
 # Planned features
 - Reddit api support
 - AWS integration

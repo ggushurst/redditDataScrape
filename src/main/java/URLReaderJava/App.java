@@ -1,5 +1,9 @@
 package URLReaderJava;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -7,15 +11,9 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-
-import java.io.FileWriter;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-
 public class App {
-
     public static void main(String[] args) throws IOException {
+        Config config = new Config();
 
         //Connecting to the website
         Document doc = Jsoup.connect("https://old.reddit.com/").get();
@@ -63,12 +61,21 @@ public class App {
         }
 
         // Writing into database
-        DatabaseRead dbr = new DatabaseRead("jdbc:postgresql://localhost/redditData", "greggushurst", "Haha343606");
+        DatabaseRead dbr = new DatabaseRead(
+            config.properties.getProperty("db.connection_string"),
+            config.properties.getProperty("db.username"),
+            config.properties.getProperty("db.password")
+        );
+
         int lastID = dbr.getLastID(); //This is used to set the ID for each new element to a unique int, creating no override for last set of data input
+        DatabaseConnection db = new DatabaseConnection(
+            config.properties.getProperty("db.connection_string"),
+            config.properties.getProperty("db.username"),
+            config.properties.getProperty("db.password")
+        );
 
         for(int i = 1; i <= postTitles.size() - 1; i++){
             redditData redditData = new redditData(i+lastID, postTitles.get(i), postVotes.get(i), postComments.get(i), postUserNames.get(i));
-            DatabaseConnection db = new DatabaseConnection("jdbc:postgresql://localhost/redditData", "greggushurst", "Haha343606");
             db.insertData(redditData);
         }
 
