@@ -1,0 +1,109 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 12.4
+-- Dumped by pg_dump version 12.4
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- Name: redditposts; Type: TABLE; Schema: public; Owner: greggushurst
+--
+
+CREATE TABLE public.redditposts (
+    id integer NOT NULL,
+    title character varying,
+    votes integer,
+    comments character varying,
+    username character varying
+);
+
+
+ALTER TABLE public.redditposts OWNER TO greggushurst;
+
+--
+-- Data for Name: redditposts; Type: TABLE DATA; Schema: public; Owner: greggushurst
+--
+
+COPY public.redditposts (id, title, votes, comments, username) FROM stdin;
+0	Delivering the extraordinary feeling of UGG in a variety of silhouettes. The MVP of your transitional footwear.	0	-1	ugg
+1	USPS employee arrested after allegedly dumping mail, including ballots sent to New Jersey residents	49446	2882	Ninjakick666
+2	Trump’s medical bill would cost an average American citizen at least $100k, report says	58600	2724	beefwbroccoli
+3	Canada banning plastic bags, straws, cutlery and other single-use items by the end of 2021	66541	2556	rentalfloss
+4	Flat Earthers disproving themselves with a scientific experiment	38670	2463	doMinationp
+5	Taylor Swift endorses Joe Biden	31914	1910	Vegeta9001
+6	They stole my yard sign so I made a bigger one	80982	2489	boston68
+7	Napoleon Bonaparte is quoted as saying “To understand the man you have to know what was happening in the world when he was twenty.” What was going on in the world when you were 18-22, and how did it influence your worldview?	14085	2333	178239104511126
+8	I can't do it	44913	2123	wwickedd
+9	Ken Bone aka Red Sweater guy is undecided again	12364	1949	jcdulos
+10	Beyond Light – Weapons and Gear Trailer	4341	1877	gifv_Kayla
+11	Bought a new generator and thoroughly reading the instructions.	85753	1107	tg8arc
+12	Facts don't care about your feelings	49324	1844	beerbellybegone
+13	Maserati + Beach + Snatch Strap = Bad	37296	1781	earthairfire
+14	No smoking, Karen...	54866	1738	Abletoxx
+15	fucking finally.	32464	1677	famskiis
+16	Math is actually really interesting	25154	1722	TheKrispyJew
+17	The new Galaxy Tab S7 and S7+ combine power and portability, with features like a super immersive screen, improved Keyboard and redesigned S Pen. Better yet? It’s available now.	0	-1	SamsungUS
+18	After Years Of Claiming It Doesn't Use Facial Recognition Software, The LAPD Admits It Has Used It 30,000 Times Since 2009	71938	1605	Shrewbacca
+19	Parents who sued a school district after their children died in a mass shooting at a Florida high school are being asked to turn over psychiatric records to prove they've suffered mental anguish	35153	1623	ZWass777
+20	Gases near a Tesla coil	16241	261	clockelvekw
+21	Maskless family at the Dallas Arboretum trying to catch the Koi Fish with their hands	32522	1599	Buttons107
+22	I’m grown up now	28446	165	MilkyChast
+23	Entitled kid jealous of his mom getting a car	37712	1507	snowmanfrigs
+24	I don’t care what your political party is, you should be angry.	62147	1379	Justinpdrew
+25	My mate who lost his job during COVID and couldn't afford his rent so i've let him stay with me until he finds something sent me this lovely gem while I was at work	15175	688	Lordflump
+26	When you checked out this tote, #YouJustStartedABook It’s a passage from “I Am the Messenger” by Markus Zusak. Read on, or read another.	0	-1	amazonbooks
+27	This would've been a no interruptions breaking news on all news and media	32985	865	abrakh
+28	A sunrise time-lapse photo I took of L.A.	20954	188	ashphotographer
+29	A stray kitten just came up and took a nap on my lap. Best moment in this whole miserable year.	43020	454	Flaty98
+30	Megathread: FBI Announces They’ve Foiled a Plot to Kidnap Michigan Governor Whitmer	68160	13320	PoliticsModeratorBot
+31	Where there is a will there is a way	44525	924	f__h
+32	'Where Gaming Begins' — AMD Ryzen 5000 (Zen3) series announcement Megathread	5432	7982	GhostMotley
+33	You are visited by someone claiming to be you from the future, how do you make them prove they’re you?	36066	8041	Chicken_Ryder
+34	A picture of anti facists.	85114	5354	thekevo1297
+35	Prince Roller skating on his Tennis court at home. Photo by Jeff Katz, 1989	25646	776	Rattlesnake_Mullet
+36	Feds say they thwarted militia plot to kidnap Whitmer	42976	4267	Ya_No
+37	How would you feel about cars having two different horns, like a polite “please would you move a bit faster, thanks” and a “fuck you for being reckless and dumb”?	0	748	tomato_soup_
+38	Tiebreaker 1 / 2020 World Championship - Group A / Post-Match Discussion	5801	3450	G2Minion
+39	When comparing MJ and LBJ, why is the majority talking about the finals and not the loses in the early rounds?	7780	3147	Therockster01
+40	games	25393	2680	ThinkingEmojiTime
+41	Crowd chants “shit your pants” at Kaitlin Bennett (aka “gun girl”) at University of Southern Florida, referencing a picture that appears to be her after shitting herself, passed out on the floor.	23941	2366	immortalsauce
+42	‘I’m surprised he’s even heard of us’: Wales hits back after Trump criticises country’s coronavirus response | “I look forward to welcoming Joe Biden here as next president of the United States,” says Plaid Cymru leader	78206	2354	mepper
+43	Footwear that’s unmistakably UGG. Dare to wear red. Featuring the Neumel in Samba Red.	3	-1	ugg
+44	Campfire Story	44205	254	System32Comics
+45	New study finds that right-wing authoritarians aren’t very funny people	27078	2165	fotogneric
+46	Was that an attempted Nazi salute	34238	2122	-Reynald-
+47	Benedict Cumberbatch Joins ‘Spider-Man 3’ as Doctor Strange	37706	1978	Austin63867
+48	The gangs all here	12588	288	Hi_imtroymclure
+49	Generic post	50272	709	xbhaskarx
+50	The big ROBOT bug on the right encounters the real bug	111899	1951	warlockkwarlockk
+51	TIME’s new cover.	76599	1880	sudde004
+\.
+
+
+--
+-- Name: redditposts redditposts_pkey; Type: CONSTRAINT; Schema: public; Owner: greggushurst
+--
+
+ALTER TABLE ONLY public.redditposts
+    ADD CONSTRAINT redditposts_pkey PRIMARY KEY (id);
+
+
+--
+-- PostgreSQL database dump complete
+--
+

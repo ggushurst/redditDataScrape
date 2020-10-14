@@ -13,10 +13,6 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
-import org.postgresql.*;
-
-
-
 public class App {
 
     public static void main(String[] args) throws IOException {
@@ -67,12 +63,12 @@ public class App {
         }
 
         // Writing into database
-        DatabaseRead dbr = new DatabaseRead("jdbc:postgresql://localhost/redditData", "greg", "Haha343606");
+        DatabaseRead dbr = new DatabaseRead("jdbc:postgresql://localhost/redditData", "greggushurst", "Haha343606");
         int lastID = dbr.getLastID(); //This is used to set the ID for each new element to a unique int, creating no override for last set of data input
 
         for(int i = 1; i <= postTitles.size() - 1; i++){
             redditData redditData = new redditData(i+lastID, postTitles.get(i), postVotes.get(i), postComments.get(i), postUserNames.get(i));
-            DatabaseConnection db = new DatabaseConnection("jdbc:postgresql://localhost/redditData", "greg", "Haha343606");
+            DatabaseConnection db = new DatabaseConnection("jdbc:postgresql://localhost/redditData", "greggushurst", "Haha343606");
             db.insertData(redditData);
         }
 
