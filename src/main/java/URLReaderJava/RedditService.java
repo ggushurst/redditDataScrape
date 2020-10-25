@@ -19,16 +19,17 @@ public class RedditService {
 
     // Config: The config singleton passed to the constructor. It holds all of the configuration.
     private Properties config;
+    // private String baseURL = 'https://www.reddit.com';
     public RedditClient client;
 
     public RedditService(Properties properties) {
         config = properties;
-        UserAgent userAgent = new UserAgent("bot", "com.example.usefulbot", "v0.1", config.getProperty("reddit.username"));
+        UserAgent userAgent = new UserAgent("bot", "com.example.usefulbot", "v0.1", config.getProperty("reddit_username"));
         Credentials credentials = Credentials.script(
-            config.getProperty("reddit.username"),
-            config.getProperty("reddit.password"),
-            config.getProperty("reddit.client_id"),
-            config.getProperty("reddit.client_secret")
+            config.getProperty("reddit_username"),
+            config.getProperty("reddit_password"),
+            config.getProperty("reddit_client_id"),
+            config.getProperty("reddit_client_secret")
         );
         NetworkAdapter adapter = new OkHttpNetworkAdapter(userAgent);
         client = OAuthHelper.automatic(adapter, credentials);
@@ -57,5 +58,4 @@ public class RedditService {
         //     // subreddit.selfUserFlair().updateToTemplate(newFlair.getId(), "");
         // }
     }
-
 }

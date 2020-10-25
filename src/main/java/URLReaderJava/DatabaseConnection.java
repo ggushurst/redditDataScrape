@@ -17,19 +17,20 @@ public class DatabaseConnection {
         return DriverManager.getConnection(this.url, this.user, this.password);
     }
 
-    public long insertData(redditData redditData) {
-        String SQL = "INSERT INTO redditPosts(id, title, votes, comments, username) " +
-                "VALUES(?,?,?,?,?)";
+    public long insertData(redditData redditdata) {
+        String SQL = "INSERT INTO redditPosts(id, title, votes, comments, username, date) " +
+                "VALUES(?,?,?,?,?,?)";
         long idTrack = 0;
 
         try (Connection conn = connect();
                 PreparedStatement pstmt = conn.prepareStatement(SQL,
                         Statement.RETURN_GENERATED_KEYS)) {
-            pstmt.setInt(1, redditData.getId());
-            pstmt.setString(2, redditData.getTitle());
-            pstmt.setInt(3, redditData.getVotes());
-            pstmt.setInt(4, redditData.getCommentCount());
-            pstmt.setString(5, redditData.getUserName());
+            pstmt.setInt(1, redditdata.getId());
+            pstmt.setString(2, redditdata.getTitle());
+            pstmt.setInt(3, redditdata.getVotes());
+            pstmt.setInt(4, redditdata.getCommentCount());
+            pstmt.setString(5, redditdata.getUserName());
+            pstmt.setString(6, redditdata.getDate());
 
             int affectedRows = pstmt.executeUpdate();
             // Check the affected rows
